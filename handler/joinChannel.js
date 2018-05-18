@@ -1,13 +1,11 @@
 var osuPacket = require("osu-packet");
 
-var loginHandler = {
+var joinChannel = {
 
     
     failed: function(req, res, reason) {
         var writer = new osuPacket.Bancho.Writer
-
-        writer.LoginReply(-1);
-        writer.Announce(reason);
+        writer.joinChannel(-1);
 
         res.writeHead(200, {
             "cho-token": null,
@@ -21,9 +19,9 @@ var loginHandler = {
     success: function(req, res) {
         var writer = new osuPacket.Bancho.Writer
 
-        writer.LoginReply(1);
+        writer.joinChannel(1);
         writer.ProtocolNegotiation(19);
-        writer.Announce("welcome to verge!");
+        writer.joinChannel("#osu");
 
         res.writeHead(200, {
             "cho-token": "some-token",
@@ -35,5 +33,3 @@ var loginHandler = {
         res.end(writer.toBuffer);
     }
 };
-
-module.exports = loginHandler;

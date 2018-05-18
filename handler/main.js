@@ -1,5 +1,6 @@
 var osuPacket = require("osu-packet");
 var loginHandler = require("./login");
+var joinchannel = require("./joinChannel");
 
 function mainHandler(req, res) {
     var data = Buffer("");
@@ -15,9 +16,11 @@ function mainHandler(req, res) {
                 res.end();
             }
         } else {
-            loginHandler.failed(req, res, "tried to login outside of osu!");
+            loginHandler.failed(req, res, "user tried to login outside of osu!");
         }
     });
 }
+
+
 
 module.exports = mainHandler;
