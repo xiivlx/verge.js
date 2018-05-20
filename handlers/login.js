@@ -9,8 +9,6 @@ const parse_login_data = (data) => {
     const credentials = packet.split("\n");
     const system_info = credentials[2].split("|");
 
-    console.log(system_info[3].split(":"));
-
     return {
         username: String(credentials[0]),
         password: String(credentials[1]),

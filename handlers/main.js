@@ -30,7 +30,6 @@ const handle = (req, res) => {
 
 const main_handler = (req, res) => {
     req.packet = new Buffer("");
-    console.log("connection");
 
     req.on("data", chunk => req.packet = Buffer.concat([req.packet, chunk], req.packet.length + chunk.length));
     req.on("end", () => {
