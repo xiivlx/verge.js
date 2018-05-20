@@ -5,4 +5,4 @@ const config = require("./config");
 console_helper.print_metadata();
 
 app.post("/", require("./handlers/main"));
-app.listen(config.port);
+app.listen(config.server.port);

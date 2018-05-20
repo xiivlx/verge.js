@@ -6,7 +6,7 @@ const print_metadata = async () => {
             console.log(result);
             console.log(" => welcome to verge.js", require("../version"));
             console.log(" => running on port", require("../config").server.port);
-            console.log(" => made by czapek and ilyt");
+            console.log(" => made by czapek and ilyt, with emotional support from comet");
             console.log(" => https://github.com/ilyt/verge.js")
             console.log(" => press ctrl+c to exit")
         });
