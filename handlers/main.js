@@ -38,7 +38,7 @@ const handle = (req, res) => {
 
                 let obj = {
                     userId: login_handler.id,
-                    username: user_data.username,
+                    username: "user" + login_handler.id,
                     timezone: 0,
                     countryId: 54,
                     permissions: 4,
