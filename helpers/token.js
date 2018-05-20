@@ -67,6 +67,7 @@ const add_token = (data) => {
     var writer = new osu.Bancho.Writer;
     writer.UserPresenceSingle(t.token);
 
+    require("./stream").add_user_to_stream("main", t);
     require("./stream").broadcast_to_stream("main", writer.toBuffer);
 };
 
