@@ -37,6 +37,7 @@ const add_user_to_stream = (name, user) => {
     let stream = get_stream_by_name(name);
 
     if (stream != undefined) {
+        console.log("added user to stream (" + user.token + ")");
         stream.users.push(user);
     }
 };
