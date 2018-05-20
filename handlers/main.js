@@ -25,7 +25,7 @@ const handle = (req, res) => {
                 stream.broadcast_to_stream("main", writer.toBuffer, { token: req.header("osu-token") });
                 break;
             case 85:
-                const writeraaa = new OsuPacket.Bancho.Writer();
+                const writeraaa = new osu.Bancho.Writer;
 
                 let UserIDs = [];
                 let output = new Buffer('');
@@ -37,7 +37,7 @@ const handle = (req, res) => {
                 token.broadcast_to_token(req.header("osu-token"), writeraaa.toBuffer);
 
                 let obj = {
-                    userId: 1,
+                    userId: login_handler.id,
                     username: user_data.username,
                     timezone: 0,
                     countryId: 54,
@@ -62,7 +62,7 @@ const main_handler = (req, res) => {
     req.on("end", () => {
         if (req.header("user-agent") === "osu!") {
             if (req.header("osu-token") === undefined) {
-                login_handler(req, res);
+                login_handler.handle(req, res);
             } else {
                 handle(req, res);
 
