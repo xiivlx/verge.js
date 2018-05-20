@@ -2,7 +2,7 @@ const osu = require("osu-packet");
 const config = require("../config");
 
 const token = require("../helpers/token");
-const token = require("../helpers/stream");
+const stream = require("../helpers/stream");
 const login_handler = require("./login");
 
 const handle = (req, res) => {
