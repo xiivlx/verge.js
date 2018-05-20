@@ -1,11 +1,8 @@
 const app = require("express")();
-const packet = require("osu-packet");
-const consoleHelper= require("./helpers/consoleHelper")
-const config= require("./config")
+const console_helper = require("./helpers/console");
+const config = require("./config");
 
-consoleHelper.printServerStart();
+console_helper.print_metadata();
 
-app.post("/");
-app.listen(config.port, () => {
-    console.log("> running on port", config.port + " <");
-});
+app.post("/", require("./handlers/main"));
+app.listen(config.port);

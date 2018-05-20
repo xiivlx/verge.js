@@ -1,22 +1,21 @@
 module.exports = {
     server: {
         port: 80,
-        apikey: '',
-        choprotocolversion: 19,
+        apikey: "",
         debug: false
     },
-    Bancho: {
-        ServerName: 'Verge',
-        BotName: 'Mitsuha',
-        SupportEmail: 'support@verge.moe',
-        freedirect: true
+    bancho: {
+        name: "Verge",
+        bot_name: "Mitsuha",
+        support_email: "support@verge.moe",
+        free_direct: true
     },
     mysql: {
         pool: 128,
-        host: '127.0.0.1',
+        host: "127.0.0.1",
         port: 3306,
-        username: 'root',
-        password: '',
-        database: 'verge'
+        username: "root",
+        password: "",
+        database: "verge"
     }
 };

@@ -1,3 +1,1 @@
-version = "0.01"
-
-module.exports = version;
+module.exports = "v0.02-beta";
