@@ -1,8 +1,8 @@
-const express = require("express");
-const app = express();
-const version = "0.01-beta"
-
-console.log("Verge.js v" + version);
+const config = require("./config");
+const app = require("express")();
 
 app.post("/", require("./handler/main"));
-app.listen(80);
+app.listen(config.port, () => {
+    console.log(" => verge", config.version);
+    console.log(" => running on port", config.port);
+});
