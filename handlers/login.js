@@ -80,6 +80,18 @@ module.exports = (req, res) => {
     writer.ChannelJoinSuccess("#osu");
     writer.ChannelJoinSuccess("#announce");
 
+    let obj = {
+        userId: 1,
+        username: user_data.username,
+        timezone: 0,
+        countryId: 54,
+        permissions: 4,
+        longitude: 0,
+        latitude: 0,
+        rank: Math.floor(Math.random() * 100) + 1
+    };
+    writer.UserPresence(obj);
+
     res.writeHead(200, {
         "cho-token": user_token,
         "cho-protocol": 19,
