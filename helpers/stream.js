@@ -60,7 +60,7 @@ const broadcast_to_stream = (name, buffer = new Buffer(""), user) => {
     if (stream != undefined) {
         for (let i = 0; i < stream.users.length; i++) {
             console.log(stream.users[i]);
-            if (user != null) {
+            if (user) {
                 if (stream.users[i].token === user.token) {
                     continue;
                 } else {
