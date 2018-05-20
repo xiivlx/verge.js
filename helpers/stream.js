@@ -63,10 +63,10 @@ const broadcast_to_stream = (name, buffer = new Buffer(""), user) => {
                 if (stream.users[i].token === user.token) {
                     continue;
                 } else {
-                    token.broadcast_to_token(streams.users[i].token, buffer);
+                    token.broadcast_to_token(stream.users[i].token, buffer);
                 }
             } else {
-                token.broadcast_to_token(streams.users[i].token, buffer);
+                token.broadcast_to_token(stream.users[i].token, buffer);
             }
         }
     }
