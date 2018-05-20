@@ -41,7 +41,8 @@ module.exports = (req, res) => {
     writer.ProtocolNegotiation(19);
     writer.Announce("welcome to verge!");
 
-    stream.add_user_to_stream("main", token.get_token(user_token));
+    var aaa = token.get_token(user_token);
+    stream.add_user_to_stream("main", aaa);
 
     const listing = (t) => {
         let writa = new osu.Bancho.Writer;
