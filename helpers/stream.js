@@ -37,7 +37,7 @@ const add_user_to_stream = (name, user) => {
     let stream = get_stream_by_name(name);
 
     if (stream != undefined) {
-        stream.users.psuh(user);
+        stream.users.push(user);
     }
 };
 
