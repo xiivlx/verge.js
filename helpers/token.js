@@ -53,6 +53,7 @@ class token {
 
 const get_token = (token) => {
     for (let i = 0; i < token_list.lenght; i++) {
+        console.log(token_list[i]);
         if (token_list[i].token === token) {
             return token_list[i];
         }
