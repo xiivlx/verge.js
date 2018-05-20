@@ -59,9 +59,19 @@ module.exports = {
                 },
                 {
                     name: "#verge",
-                    description: "czat dla polakuw",
+                    description: "main verge chat",
                     user_count: 0
-                }
+                },
+                {
+                    name: "#nowranked",
+                    description: "chat to announce ranked maps",
+                    user_count: 0
+                },
+                {
+                    name: "#polish",
+                    description: "chat for czapek because he's a lonely pizdo", //r00d 
+                    user_count: 1
+                },
             ];
 
             writa.ChannelListingComplete();
@@ -81,6 +91,8 @@ module.exports = {
         writer.ChannelJoinSuccess("#verge");
         writer.ChannelJoinSuccess("#osu");
         writer.ChannelJoinSuccess("#announce");
+        writer.ChannelJoinSuccess("#nowranked");
+        writer.ChannelJoinSuccess("#polish");
 
         let obj = {
             userId: xd++,
