@@ -2,6 +2,7 @@ const osu = require("osu-packet");
 const config = require("../config");
 
 const token = require("../helpers/token");
+const token = require("../helpers/stream");
 const login_handler = require("./login");
 
 const handle = (req, res) => {
@@ -21,6 +22,7 @@ const handle = (req, res) => {
                 target: packet.data.target,
                 senderId: 1
             });
+            stream.broadcast_to_stream("main", writer.toBuffer, { token: req.header("osu-token") });
             break;
         }
 
