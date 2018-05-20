@@ -108,5 +108,6 @@ module.exports = {
     get_token,
     broadcast_to_token,
     get_data_by_token,
-    is_valid
+    is_valid,
+    tokens: token_list
 };

@@ -13,17 +13,42 @@ const handle = (req, res) => {
 
     for (let i = 0; i < packet_data.length; i++) {
         let packet = packet_data[i];
-        
+
         switch (packet.id) {
             case 1:
-            writer.SendMessage({
-                sendingClient: config.bancho.bot_name,
-                message: "your message: " + packet.data.message,
-                target: packet.data.target,
-                senderId: 1
-            });
-            stream.broadcast_to_stream("main", writer.toBuffer, { token: req.header("osu-token") });
-            break;
+                writer.SendMessage({
+                    sendingClient: config.bancho.bot_name,
+                    message: "your message: " + packet.data.message,
+                    target: packet.data.target,
+                    senderId: 1
+                });
+                stream.broadcast_to_stream("main", writer.toBuffer, { token: req.header("osu-token") });
+                break;
+            case 85:
+                const writeraaa = new OsuPacket.Bancho.Writer();
+
+                let UserIDs = [];
+                let output = new Buffer('');
+
+                for (let i = 0, len = token.tokens.length; i < len; i++) {
+                    UserIDs.push(token.tokens[i].general.id);
+                }
+                writeraaa.UserPresenceBundle(UserIDs);
+                token.broadcast_to_token(req.header("osu-token"), writeraaa.toBuffer);
+
+                let obj = {
+                    userId: 1,
+                    username: user_data.username,
+                    timezone: 0,
+                    countryId: 54,
+                    permissions: 4,
+                    longitude: 0,
+                    latitude: 0,
+                    rank: Math.floor(Math.random() * 100) + 1
+                };
+                writer.UserPresence(obj);
+
+                break;
         }
 
         token.broadcast_to_token(req.header("osu-token"), writer.toBuffer);
