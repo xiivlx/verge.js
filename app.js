@@ -16,7 +16,7 @@ stream.add_stream("main");
 users.add_user(new users.user(config.server.bot_name, 1));
 stream.add_user("main", users.get(config.server.bot_name));
 
-app.post("/", require("./handlers/main"));
+app.post("/", require("./source/handlers/main"));
 app.listen(config.server.port);
 
 console_helper.print_metadata();
