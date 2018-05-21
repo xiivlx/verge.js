@@ -1,5 +1,6 @@
 const osu = require("osu-packet");
 const config = require("../config");
+const token = require("../helpers/token");
 const login_handler = require("./login");
 const { stream, users, channels, console_helper } = require("../utilities/utils");
 
