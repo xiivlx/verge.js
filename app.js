@@ -1,5 +1,6 @@
 const app = require("express")();
 const { stream, users, channels, console_helper } = require("./source/utilities/utils");
+const config = require("./source/config")
 
 stream.add_stream("main");
 
@@ -18,4 +19,4 @@ stream.add_user("main", users.get(config.server.bot_name));
 app.post("/", require("./handlers/main"));
 app.listen(config.server.port);
 
-console_helper.print_metadata();c
+console_helper.print_metadata();
