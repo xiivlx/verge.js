@@ -1,5 +1,5 @@
 const osu = require("osu-packet");
-const token = require("token");
+const token = require("../helpers/token");
 const stream = require("stream")
 
 let channel_list = [];
