@@ -1,1 +1,0 @@
-module.exports = "v0.03-beta";
