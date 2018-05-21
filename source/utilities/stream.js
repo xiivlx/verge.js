@@ -1,4 +1,3 @@
-const token = require("./token");
 let stream_list = [];
 
 class c_stream {
