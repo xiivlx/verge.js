@@ -1,5 +1,5 @@
 const osu = require("osu-packet");
-const { stream, users, channels, console_helper } = require("./source/utilities/utils");
+const { stream, users, channels, console_helper } = require("../utilities/utils");
 
 const parse_login_data = (data) => {
     const packet = data.toString();
