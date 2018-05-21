@@ -1,7 +1,7 @@
 const osu = require("osu-packet");
 const config = require("../config");
 const login_handler = require("./login");
-const { stream, users, channels, console_helper } = require("./source/utilities/utils");
+const { stream, users, channels, console_helper } = require("../utilities/utils");
 
 const main_handler = (req, res) => {
     req.packet = new Buffer("");
