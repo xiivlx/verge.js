@@ -1,6 +1,6 @@
 const app = require("express")();
 const { stream, users, channels, console_helper } = require("./source/utilities/utils");
-const config = require("./source/config")
+const config = require("./source/config");
 
 stream.add_stream("main");
 
